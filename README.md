@@ -12,7 +12,8 @@ Before powering up, changes are need in the laptop-settings-Network:
 
 ### Install Livox-SDK and Livox-ROS-driver
 1. Create a workspace named `LivoxAvia-ws`, cd into it and `catkin_make`.
-2. Install SDK
+   https://github.com/Livox-SDK/Livox-SDK 
+2. Install SDK   
    ```
    cd ~/LivoxAvia-ws/src
    git clone https://github.com/Livox-SDK/Livox-SDK.git
