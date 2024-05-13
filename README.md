@@ -1,7 +1,9 @@
 # Note-for-R3LIVE
 
 ## Set up Livox Avia LiDAR
-Reference: https://blog.csdn.net/m0_52765390/article/details/136658542  
+Reference:  
+https://blog.csdn.net/m0_52765390/article/details/136658542  
+https://blog.csdn.net/qq_38768959/article/details/123098437  
 Wired connecting Livox LiDAR and laptop, keep the voltage at the range of 10~15 V.
 
 ### Laptop settings
