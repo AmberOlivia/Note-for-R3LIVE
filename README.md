@@ -11,7 +11,7 @@ Before powering up, changes are need in the laptop-settings-Network:
    Address: 192.168.1.50    Netmask: 255.255.255.0    Gateway: 192.168.1.154 ('54'in'154' is from last two numbers of S/N number)
 
 ### Install Livox-SDK and Livox-ROS-driver
-1. Create a workspace named `LivoxAvia-ws`, cd into it and `catkin_make`.
+1. Create a workspace named `LivoxAvia-ws`, cd into it and `catkin_make`.  
    https://github.com/Livox-SDK/Livox-SDK 
 2. Install SDK   
    ```
