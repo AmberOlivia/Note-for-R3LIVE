@@ -38,6 +38,23 @@ Before powering up, changes are need in the laptop-settings-Network:
    This will launch Rviz and see the LiDAR view, Fixed Frame:`livox_frame`, Topic(add **PointCloud2** topic):`/livox/lidar`, 
    
 ## Set up environment for R3LIVE
+Following step 3,4, and 5 in https://github.com/hku-mars/r3live  
+```
+#-----prepare prerequisites-----
+sudo apt-get install ros-noetic-cv-bridge ros-XXX-tf ros-noetic-message-filters ros-noetic-image-transport ros-noetic-image-transport*
+sudo apt-get install libcgal-dev pcl-tools
+pkg-config --modversion opencv #check opencv version
+#-----create workspace------
+cd ~/r3live/src
+git clone https://github.com/hku-mars/r3live.git
+cd ../
+catkin_make
+source ~/r3live/devel/setup.bash
+#-----run-----
+roslaunch r3live r3live_bag.launch # terminal 1
+rosbag play YOUR_DOWNLOADED.bag  # terminal 2
+```
+More in official repo.
 
 
 ## Set up camera
