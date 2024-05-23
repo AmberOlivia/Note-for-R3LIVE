@@ -16,7 +16,7 @@ Before powering up, changes are need in the laptop-settings-Network:
    https://github.com/Livox-SDK/Livox-SDK 
 2. Install SDK   
    ```
-   cd ~/LivoxAvia-ws/src
+   cd ~/LivoxAvia_ws/src
    git clone https://github.com/Livox-SDK/Livox-SDK.git
    cd Livix-SDK/build/
    cmake
@@ -26,7 +26,7 @@ Before powering up, changes are need in the laptop-settings-Network:
    Check if SDK is correctly installed: under `build/sample/lidar`, run `./lidar_sample`.
 3. Install livox_ros_driver
    ```
-   cd ~/LivoxAvia/src
+   cd ~/LivoxAvia_ws/src
    git clone https://github.com/Livox-SDK/livox_ros_driver.git ws_livox/src
    cd ws_livox
    catkin_make
