@@ -61,8 +61,8 @@ rosbag play YOUR_DOWNLOADED.bag  # terminal 2
 More in official repo.
 
 #### Possible Error
-In the step 4. of R3LIVE repository, after run `catkin_make`
-Error:
+In the step 4. of R3LIVE repository, after run `catkin_make`  
+Meet Error:
 ```
 CMake Error at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
   Could not find a package configuration file provided by "livox_ros_driver"
@@ -72,7 +72,7 @@ CMake Error at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_pa
     livox_ros_driver-config.cmake
 ```
 To solve this, go to ~/LivoxAvia_ws/src/ws_livox, `source devel/setup.bash`
-Then the error will be solved.
+
 
 ## Set up camera
 
