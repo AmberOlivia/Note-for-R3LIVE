@@ -67,6 +67,9 @@ Error:
 CMake Error at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
   Could not find a package configuration file provided by "livox_ros_driver"
   with any of the following names:
+
+    livox_ros_driverConfig.cmake
+    livox_ros_driver-config.cmake
 ```
 To solve this, go to ~/LivoxAvia_ws/src/ws_livox, `source devel/setup.bash`
 Then the error will be solved.
