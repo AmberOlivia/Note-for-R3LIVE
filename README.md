@@ -43,19 +43,33 @@ Following step 3,4, and 5 in https://github.com/hku-mars/r3live
 #-----prepare prerequisites-----
 sudo apt-get install ros-noetic-cv-bridge ros-XXX-tf ros-noetic-message-filters ros-noetic-image-transport ros-noetic-image-transport*
 sudo apt-get install libcgal-dev pcl-tools
-pkg-config --modversion opencv #check opencv version
+
+#-----check opencv version-----
+pkg-config --modversion opencv
+
 #-----create workspace------
 cd ~/r3live/src
 git clone https://github.com/hku-mars/r3live.git
 cd ../
 catkin_make
 source ~/r3live/devel/setup.bash
+
 #-----run-----
 roslaunch r3live r3live_bag.launch # terminal 1
 rosbag play YOUR_DOWNLOADED.bag  # terminal 2
 ```
 More in official repo.
 
+#### Possible Error
+In the step 4. of R3LIVE repository, after run `catkin_make`
+Error:
+```
+CMake Error at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
+  Could not find a package configuration file provided by "livox_ros_driver"
+  with any of the following names:
+```
+To solve this, go to ~/LivoxAvia_ws/src/ws_livox, `source devel/setup.bash`
+Then the error will be solved.
 
 ## Set up camera
 
