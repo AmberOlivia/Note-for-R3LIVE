@@ -18,8 +18,8 @@ Before powering up, changes are need in the laptop-settings-Network:
    ```
    cd ~/LivoxAvia_ws/src
    git clone https://github.com/Livox-SDK/Livox-SDK.git
-   cd Livix-SDK/build/
-   cmake
+   cd Livox-SDK/build/
+   cmake ..
    make
    sudo make install
    ```
