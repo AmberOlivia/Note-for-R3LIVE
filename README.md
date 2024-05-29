@@ -75,5 +75,21 @@ To solve this, go to ~/LivoxAvia_ws/src/ws_livox, `source devel/setup.bash`
 
 
 ## Set up camera
+Install nvidia driver(I'm using the latest 555 version), CUDA(12.4), ZED-SDK. 
+`ZED_Explorer` and `ZED_Sensor_Viewer` should work well, the tools are under `usr/local/zed/tools/`
+
+## Calibration for camera and lidar
+Reference:  
+https://gitee.com/linClubs/lidar2cam_calibration
+https://chev.me/arucogen/
+
+### Stereo camera intrinsic calibration
+
+
+### LiDAR and camera extrinsic calibration
+
+
+
+
 
 ## Build workspace
