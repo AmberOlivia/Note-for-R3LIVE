@@ -1,6 +1,6 @@
 # Note-for-R3LIVE
 
-## Set up Livox Avia LiDAR
+## Set up Livox Avia LiDAR (Broadcast node: )
 Reference:  
 https://blog.csdn.net/m0_52765390/article/details/136658542  
 https://blog.csdn.net/qq_38768959/article/details/123098437  
@@ -74,7 +74,7 @@ CMake Error at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_pa
 To solve this, go to ~/LivoxAvia_ws/src/ws_livox, `source devel/setup.bash`
 
 
-## Set up camera
+## Set up camera (SN:37291130)
 Install nvidia driver(I'm using the latest 555 version), CUDA(12.4), ZED-SDK. 
 `ZED_Explorer` and `ZED_Sensor_Viewer` should work well, the tools are under `usr/local/zed/tools/`
 
