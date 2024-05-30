@@ -1,6 +1,6 @@
 # Note-for-R3LIVE
 
-## Set up Livox Avia LiDAR (Broadcast node: )
+## Set up Livox Avia LiDAR (Broadcast node: 3JEDM1F001V0541)
 Reference:  
 https://blog.csdn.net/m0_52765390/article/details/136658542  
 https://blog.csdn.net/qq_38768959/article/details/123098437  
@@ -23,8 +23,9 @@ Before powering up, changes are need in the laptop-settings-Network:
    make
    sudo make install
    ```
-   Check if SDK is correctly installed: under `build/sample/lidar`, run `./lidar_sample`.
-3. Install livox_ros_driver
+   Check if SDK is correctly installed: under `Livox-SDK/build/sample/lidar`, run `./lidar_sample`. (Use this to get broadcast code)
+   
+4. Install livox_ros_driver
    ```
    cd ~/LivoxAvia_ws/src
    git clone https://github.com/Livox-SDK/livox_ros_driver.git ws_livox/src
@@ -34,6 +35,7 @@ Before powering up, changes are need in the laptop-settings-Network:
    ```
    Run Livox-ROS-driver by running launch files, including:
    ![image](https://github.com/AmberOlivia/Note-for-R3LIVE/assets/74347715/9b563386-fbff-4165-a795-dd9d2dfeab2a)
+
    For example: `roslaunch livox_ros_driver livox_lidar_rviz.launch`  
    This will launch Rviz and see the LiDAR view, Fixed Frame:`livox_frame`, Topic(add **PointCloud2** topic):`/livox/lidar`, 
    
