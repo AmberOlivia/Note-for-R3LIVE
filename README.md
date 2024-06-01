@@ -63,7 +63,7 @@ rosbag play YOUR_DOWNLOADED.bag  # terminal 2
 More in official repo.
 
 #### Possible Error
-In the step 4. of R3LIVE repository, after run `catkin_make`  
+1. In the step 4. of R3LIVE repository, after run `catkin_make`  
 Meet Error:
 ```
 CMake Error at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
@@ -74,6 +74,15 @@ CMake Error at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_pa
     livox_ros_driver-config.cmake
 ```
 To solve this, go to ~/LivoxAvia_ws/src/ws_livox, `source devel/setup.bash`
+
+2. When installed all the dependencies and run `catkin_make`, there might be `Error: make failed -j16 -l16`.
+   Just keep run `catkin_make`.
+
+3. After first time running `catkin_make`, there might be some error related to source file.
+   Run `source devel/setup.bash` under r3live_ws, then rerun `catkin_make`.
+
+4. If some contents in CMakeLists.txt file has modified, remember to delete build and devel files and run `catkin_make` again.
+5. The missing file `CustomMsg.h` can be found in r3live_ws/devel/include/livox_ros_driver/
 
 
 ## Set up camera (SN:37291130)
