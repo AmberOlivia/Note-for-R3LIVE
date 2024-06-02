@@ -90,6 +90,14 @@ Reference: https://github.com/Livox-SDK/livox_ros_driver/issues/107
 Install nvidia driver(I'm using the latest 555 version), CUDA(12.4), ZED-SDK. 
 `ZED_Explorer` and `ZED_Sensor_Viewer` should work well, the tools are under `usr/local/zed/tools/`
 
+## record rosbag
+`roslaunch r3live record_sensors.launch`
+
+`rosbag record -O my_recording.bag /livox/lidar /livox/imu /zed2i/zed_node/left/image_rect_color /zed2i/zed_node/right/image_rect_color`
+
+
+
+
 ## Calibration for camera and lidar
 Reference:  
 https://gitee.com/linClubs/lidar2cam_calibration
