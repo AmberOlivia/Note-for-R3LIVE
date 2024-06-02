@@ -82,7 +82,8 @@ To solve this, go to ~/LivoxAvia_ws/src/ws_livox, `source devel/setup.bash`
    Run `source devel/setup.bash` under r3live_ws, then rerun `catkin_make`.
 
 4. If some contents in CMakeLists.txt file has modified, remember to delete build and devel files and run `catkin_make` again.
-5. The missing file `CustomMsg.h` can be found in r3live_ws/devel/include/livox_ros_driver/
+5. The missing file `CustomMsg.h` can be found in r3live_ws/devel/include/livox_ros_driver/.
+Reference: https://github.com/Livox-SDK/livox_ros_driver/issues/107
 
 
 ## Set up camera (SN:37291130)
