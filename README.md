@@ -82,13 +82,13 @@ To solve this, go to ~/LivoxAvia_ws/src/ws_livox, `source devel/setup.bash`
    Run `source devel/setup.bash` under r3live_ws, then rerun `catkin_make`.
 
 4. If some contents in CMakeLists.txt file has modified, remember to delete build and devel files and run `catkin_make` again.
-5. The missing file `CustomMsg.h` can be found in r3live_ws/devel/include/livox_ros_driver/.
-Reference:
-https://github.com/Livox-SDK/livox_ros_driver/issues/107  
-https://github.com/Livox-SDK/livox_ros_driver/issues/41
+5. The missing file `CustomMsg.h` can be found in r3live_ws/devel/include/livox_ros_driver/.  
+Reference:  
+[#107](https://github.com/Livox-SDK/livox_ros_driver/issues/107)  
+[#41](https://github.com/Livox-SDK/livox_ros_driver/issues/41)
 
-https://github.com/Livox-SDK/livox_ros_driver/issues/104
-https://github.com/Livox-SDK/livox_ros_driver/issues/125
+[#104](https://github.com/Livox-SDK/livox_ros_driver/issues/104)
+[#125](https://github.com/Livox-SDK/livox_ros_driver/issues/125)
 
 ## Set up camera (SN:37291130)
 Install nvidia driver(I'm using the latest 555 version), CUDA(12.4), ZED-SDK. 
