@@ -95,6 +95,11 @@ Install nvidia driver(I'm using the latest 555 version), CUDA(12.4), ZED-SDK.
 `ZED_Explorer` and `ZED_Sensor_Viewer` should work well, the tools are under `usr/local/zed/tools/`
 
 ## record rosbag
+Make sure the topics recorded have right data message type:
+`/livox/lidar: livox_ros_driver/CustomMsg`
+`/livox/imu: sensor_msgs/Imu`
+You need to write a launch file under `r3live_ws/src/r3live/r3live/launch` file
+
 `roslaunch r3live record_sensors.launch`
 
 `rosbag record -O my_recording.bag /livox/lidar /livox/imu /zed2i/zed_node/left/image_rect_color /zed2i/zed_node/right/image_rect_color`
