@@ -105,15 +105,14 @@ You need to write a launch file under `r3live_ws/src/r3live/r3live/launch` file
 `rosbag record -O my_recording.bag /livox/lidar /livox/imu /zed2i/zed_node/left/image_rect_color /zed2i/zed_node/right/image_rect_color`
 
 
-
-
 ## Calibration for camera and lidar
 Reference:  
 https://gitee.com/linClubs/lidar2cam_calibration
 https://chev.me/arucogen/
 
 ### Stereo camera intrinsic calibration
-
+Just use official calibration tool: `/usr/local/zed/tools/ZED_Calibration` to calibrate. The calibration file is in /usr/local/zed/settings.
+Or download official calibration file by calling http://calib.stereolabs.com/?SN={CAMERA SERIAL NUMBER}
 
 ### LiDAR and camera extrinsic calibration
 
