@@ -99,13 +99,21 @@ Make sure the topics recorded have right data message type:
 `/livox/lidar: livox_ros_driver/CustomMsg`
 `/livox/imu: sensor_msgs/Imu`
 You need to write a launch file under `r3live_ws/src/r3live/r3live/launch` file
+The launch file should launch LiDAR and camera together, launch camera using `zed2i.launch`.
+Launch LiDAR using `livox_lidar_msg.launch` to make sure the lidar topic message type will be `livox_ros_driver/CustomMsg`.
 
-`roslaunch r3live record_sensors.launch`
+*Tip*: Change the xfer parameter in `livox_lidar_msg.launch` to 1 to ensure the message to be CustomMsg.
 
-`rosbag record -O my_recording.bag /livox/lidar /livox/imu /zed2i/zed_node/left/image_rect_color /zed2i/zed_node/right/image_rect_color`
+Run these:
+```
+`roslaunch r3live record_sensors.launch`  
+`rosbag record -O mybag00.bag /livox/lidar /livox/imu /zed2i/zed_node/left/image_rect_color /zed2i/zed_node/right/image_rect_color`
 
+`rosbag info {BAGNAME.bag}` #check bag info
+`rostopic echo {TOPIC NAME}` #check topic message type
+```
 
-## Calibration for camera and lidar
+## Calibration
 Reference:  
 https://gitee.com/linClubs/lidar2cam_calibration
 https://chev.me/arucogen/
@@ -116,6 +124,7 @@ Or download official calibration file by calling http://calib.stereolabs.com/?SN
 
 ### LiDAR and camera extrinsic calibration
 
+Use calibration tool: [livox_camera_calib](https://github.com/hku-mars/livox_camera_calib)
 
 
 
