@@ -138,8 +138,14 @@ Use `roslaunch livox_ros_driver livox_lidar_rviz.launch` for rviz visualization.
 Check rosbag with `rosbag info 0.bag`.  
 Single calibration: under `calib_ws`, modify file paths in `calib.yaml`, run `roslaunch livox_camera_Calib calib.launch`, result file will be saved in assigned path.
 
-### Time syncronizatin
+### Time syncronization
 Use `rqt_bag 0.bag` to check the timestamps of sensors.
 
+From the [#7](), the author mentioned hardware time synchronization was not used. They use algorithm for time-offset.
+
+
+## Run with your own rosbag
+Before running, modify the intrinsic and extrinsic parameters in the config files.
+For exrinsic matrix, see [#16]() check R2LIVE paper and also the calibration paper(Pixel-level extrinsic self calibration ...) for more details. 
 
 
