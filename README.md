@@ -122,11 +122,24 @@ https://chev.me/arucogen/
 Just use official calibration tool: `/usr/local/zed/tools/ZED_Calibration` to calibrate. The calibration file is in /usr/local/zed/settings.
 Or download official calibration file by calling http://calib.stereolabs.com/?SN={CAMERA SERIAL NUMBER}
 
-### LiDAR and camera extrinsic calibration
+### LiDAR and camera extrinsic calibration (spatial syncronization)
 
-Use calibration tool: [livox_camera_calib](https://github.com/hku-mars/livox_camera_calib)
+Use calibration tool: [livox_camera_calib](https://github.com/hku-mars/livox_camera_calib)  
+Collecting image using ZED_explorer app. Cut the image to get left and right image view(python in colab), convert image format to cv8uc3 or cv8uc1.
+
+Record rosbag with:
+```
+roslaunch livox_ros_driver livox_lidar_msg.launch
+roslaunch zed_wrapper zed2i.launch
+rosbag record -O 0.bag /livox/lidar /livox/imu /zed2i/zed_node/left/image_rect_color/compressed
+```
+Use `livox_ros_msg.launch` will ensure the /livox/lidar topic message type: /livox_ros_driver/CustomMsg, but cannot visualize in rviz.  
+Use `roslaunch livox_ros_driver livox_lidar_rviz.launch` for rviz visualization.
+Check rosbag with `rosbag info 0.bag`.  
+Single calibration: under `calib_ws`, modify file paths in `calib.yaml`, run `roslaunch livox_camera_Calib calib.launch`, result file will be saved in assigned path.
+
+### Time syncronizatin
+Use `rqt_bag 0.bag` to check the timestamps of sensors.
 
 
 
-
-## Build workspace
