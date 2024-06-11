@@ -141,11 +141,13 @@ Single calibration: under `calib_ws`, modify file paths in `calib.yaml`, run `ro
 ### Time syncronization
 Use `rqt_bag 0.bag` to check the timestamps of sensors.
 
-From the [#7](), the author mentioned hardware time synchronization was not used. They use algorithm for time-offset.
+From the [#7](), the author mentioned hardware time synchronization was not used. They use algorithm for time-offset. Change the
+
 
 
 ## Run with your own rosbag
 Before running, modify the intrinsic and extrinsic parameters in the config files.
-For exrinsic matrix, see [#16]() check R2LIVE paper and also the calibration paper(Pixel-level extrinsic self calibration ...) for more details. 
+For exrinsic matrix, see [#16]() check R2LIVE paper and also the calibration paper(Pixel-level extrinsic self calibration...) for more details. 
+
 
 
