@@ -125,14 +125,18 @@ Or download official calibration file by calling http://calib.stereolabs.com/?SN
 ### LiDAR and camera extrinsic calibration (spatial syncronization)
 
 Use calibration tool: [livox_camera_calib](https://github.com/hku-mars/livox_camera_calib)  
-Collecting image using ZED_explorer app. Cut the image to get left and right image view(python in colab), convert image format to cv8uc3 or cv8uc1.
-
-Record rosbag with:
+1. Collecting image using ZED_explorer app. Cut the image to get left and right image view(python in colab), convert image format to cv8uc3 or cv8uc1(required image format for R3LIVE).
+2. Record rosbag with:
 ```
 roslaunch livox_ros_driver livox_lidar_msg.launch
 roslaunch zed_wrapper zed2i.launch
 rosbag record -O 0.bag /livox/lidar /livox/imu /zed2i/zed_node/left/image_rect_color/compressed
 ```
+3. For each image, record a 10 seconds rosbag with the fixed setting of camera and LiDAR.
+**Calibration shows a good result in a staircase or corridor scenario, with explicit edges to be detected.
+
+The extrinsic matrix will be saved after calibration. This matrix should be inversed before using in R3LIVE application, but for orthogonal matrix, just get its transpose of R. For T, use the last column of the extrinsic matrix output after the joint calibration.(Actually, just use default values will get a good result.)
+
 Use `livox_ros_msg.launch` will ensure the /livox/lidar topic message type: /livox_ros_driver/CustomMsg, but cannot visualize in rviz.  
 Use `roslaunch livox_ros_driver livox_lidar_rviz.launch` for rviz visualization.
 Check rosbag with `rosbag info 0.bag`.  
@@ -141,13 +145,19 @@ Single calibration: under `calib_ws`, modify file paths in `calib.yaml`, run `ro
 ### Time syncronization
 Use `rqt_bag 0.bag` to check the timestamps of sensors.
 
-From the [#7](), the author mentioned hardware time synchronization was not used. They use algorithm for time-offset. Change the
+From the [#7](), the author mentioned hardware time synchronization was not used. They use algorithm for time-offset. Make modification of the `lddc.cpp` file of the`livox_ros_driver` workspace.  
+Refering to the author's modification from R2LIVE. Change the value of time_sync parameter in config file. Finish time sync.
 
-
-
-## Run with your own rosbag
+## Record new rosbag and run.
 Before running, modify the intrinsic and extrinsic parameters in the config files.
 For exrinsic matrix, see [#16]() check R2LIVE paper and also the calibration paper(Pixel-level extrinsic self calibration...) for more details. 
+Record new rosbag and videos with fixed sensors. Then run `r3live_bag.launch` and `rosbag play ${BAGNAME}.bag$`. Enjoy your mapping!
+Saved map can be opened with `pcl_viewer`.
+Besides, run `r3live_reconstruct_mesh.launch` will make the reconstructed map, which can be open with Meshlab or pcl_viewer.
 
-
-
+## Accuracy
+- Calibratiion.
+  The inconsistency of image color mapping on the point cloud data can be caused by the inaccuracy of joint calibration, or the calibration of the camera.
+  Change joint calibration scenario, using multi_calib may be helpful.
+- Drift problem.
+  Drift problem always caused by imu, some parameters can be adjust for better performance. See[#]()
