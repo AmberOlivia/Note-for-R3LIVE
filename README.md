@@ -151,7 +151,7 @@ Refering to the author's modification from R2LIVE. Change the value of time_sync
 ## Record new rosbag and run.
 Before running, modify the intrinsic and extrinsic parameters in the config files.
 For exrinsic matrix, see [#16]() check R2LIVE paper and also the calibration paper(Pixel-level extrinsic self calibration...) for more details. 
-Record new rosbag and videos with fixed sensors. Then run `r3live_bag.launch` and `rosbag play ${BAGNAME}.bag$`. Enjoy your mapping!
+Record new rosbag and videos with fixed sensors. Then run `roslaunch r3live r3live_bag.launch` and `rosbag play ${BAGNAME}.bag$`. Enjoy your mapping!
 Saved map can be opened with `pcl_viewer`.
 Besides, run `r3live_reconstruct_mesh.launch` will make the reconstructed map, which can be open with Meshlab or pcl_viewer.
 
