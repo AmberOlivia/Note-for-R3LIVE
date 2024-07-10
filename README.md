@@ -155,6 +155,15 @@ Record new rosbag and videos with fixed sensors. Then run `roslaunch r3live r3li
 Saved map can be opened with `pcl_viewer`.
 Besides, run `r3live_reconstruct_mesh.launch` will make the reconstructed map, which can be open with Meshlab or pcl_viewer.
 
+## Run
+```
+#--- In different terminals, run following command seperately:  
+roslaunch r3live both.launch  #---power on lidar before running this
+roslaunch r3live r3live.launch  #---this will launch r3live interface
+#--- Above two commands will start the real time r3live application. Use below command to record rosbag:  
+rosbag record -O $BAGNAME$ /livox/lidar /livox/imu /zed2i/zed_node/left/image_rect_color/compressed  #---record topics you need
+```
+
 ## Accuracy
 - Calibratiion.
   The inconsistency of image color mapping on the point cloud data can be caused by the inaccuracy of joint calibration, or the calibration of the camera.
