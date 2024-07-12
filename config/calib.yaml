@@ -1,0 +1,17 @@
+# Data path. adjust them!
+common:
+    image_file: "/home/husky-legion/calib_ws/src/livox_camera_calib/mydata/image/9.png"
+    pcd_file: "/home/husky-legion/calib_ws/src/livox_camera_calib/mydata/pcd/pcd/9.pcd"
+    result_file: "/home/husky-legion/calib_ws/single_scene_calibration/myextrinsic9.txt"
+
+# Camera Parameters. Adjust them!
+camera:
+    camera_matrix: [1061.72, 0.0,      1123.41,
+                0.0,     1061.24,  658.657,
+                0.0,     0.0,      1.0     ]
+    dist_coeffs: [-1.1304, 2.0164, -0.0002, 0.0002, 0.2774]
+
+# Calibration Parameters.!
+calib:
+    calib_config_file: "/home/husky-legion/calib_ws/src/livox_camera_calib/config/config_outdoor.yaml"
+    use_rough_calib: true # set true if your initial_extrinsic is bad
