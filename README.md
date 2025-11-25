@@ -33,9 +33,7 @@ Before powering up, changes are need in the laptop-settings-Network:
    catkin_make
    source ./devel/setup.sh
    ```
-   Run Livox-ROS-driver by running launch files, including:
-   ![image](https://github.com/AmberOlivia/Note-for-R3LIVE/assets/74347715/9b563386-fbff-4165-a795-dd9d2dfeab2a)
-
+   Run Livox-ROS-driver by running launch files,
    For example: `roslaunch livox_ros_driver livox_lidar_rviz.launch`  
    This will launch Rviz and see the LiDAR view, Fixed Frame:`livox_frame`, Topic(add **PointCloud2** topic):`/livox/lidar`, 
    
